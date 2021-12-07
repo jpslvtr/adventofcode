@@ -1,3 +1,5 @@
+# Day 1
+
 import pandas as pd
 
 depths = pd.read_csv("input.txt", header=None).squeeze()
