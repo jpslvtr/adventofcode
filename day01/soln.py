@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+"""Advent of Code 2021 Day 1."""
+
 import pandas as pd
 
 depths = pd.read_csv("input.txt", header=None).squeeze()
