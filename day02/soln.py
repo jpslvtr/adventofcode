@@ -45,8 +45,8 @@ def get_actual_coordinates(positions):
 def main():
     """Main."""
     positions = read_file('input.txt')
-    # part1 = get_coordinates(positions)
-    # print(part1)
+    part1 = get_coordinates(positions)
+    print(part1)
     part2 = get_actual_coordinates(positions)
     print(part2)
 
