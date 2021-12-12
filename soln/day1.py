@@ -7,7 +7,7 @@ import pandas as pd
 
 def main():
     """Main."""
-    depths = pd.read_csv("input.txt", header=None).squeeze()
+    depths = pd.read_csv("../inputs/1.txt", header=None).squeeze()
 
     # Part 1
     increases = sum(depths.diff() > 0)

@@ -10,7 +10,7 @@ aim = 0
 
 
 def read_file(filename):
-    """Take a file, return a np array."""
+    """Take input; return np array."""
     data = np.loadtxt(filename, dtype='str')
     return data
 
@@ -44,7 +44,7 @@ def get_actual_coordinates(positions):
 
 def main():
     """Main."""
-    positions = read_file('input.txt')
+    positions = read_file('../inputs/2.txt')
     part1 = get_coordinates(positions)
     print(part1)
     part2 = get_actual_coordinates(positions)

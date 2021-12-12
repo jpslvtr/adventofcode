@@ -21,7 +21,7 @@ class Counter:
 
 
 def read_file(filename):
-    """Take a file, return a np array."""
+    """Take input; return np array."""
     data = np.loadtxt(filename, dtype='str')
     return data
 
@@ -84,7 +84,7 @@ def life_support_rating(input):
 
 def main():
     """Main."""
-    input = read_file('input.txt')
+    input = read_file('../inputs/3.txt')
     print(power_consumption(input))
     print(life_support_rating(input))
 
