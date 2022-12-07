@@ -2,8 +2,6 @@
 
 """Advent of Code 2022 Day 6."""
 
-from collections import Counter
-
 def read_file(filename):
     with open(filename) as f:
         res = f.read().strip('\n')
