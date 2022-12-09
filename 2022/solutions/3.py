@@ -16,18 +16,18 @@ def priority(c):
     return val
 
 def compare_two_dicts(first, second):
-    totalPriority = 0
-    sharedKeys = set(first.keys()).intersection(second.keys())
-    for key in sharedKeys:
-        totalPriority += priority(key) 
-    return totalPriority                         
+    total_priority = 0
+    shared_keys = set(first.keys()).intersection(second.keys())
+    for key in shared_keys:
+        total_priority += priority(key) 
+    return total_priority                         
 
 def compare_three_dicts(first, second, third):
-    totalPriority = 0
-    sharedKeys = set(first.keys()) & set(second.keys()) & set(third.keys())
-    for key in sharedKeys:
-        totalPriority += priority(key)
-    return totalPriority
+    total_priority = 0
+    shared_keys = set(first.keys()) & set(second.keys()) & set(third.keys())
+    for key in shared_keys:
+        total_priority += priority(key)
+    return total_priority
 
 def grouped(l, n): 
     for i in range(0, len(l), n):
@@ -48,18 +48,18 @@ def part1(filename):
 def part2(filename):
     res = 0
     rucksacks = read_file(filename)
-    threeElfGroups = list(grouped(rucksacks, 3))
-    for elfGroup in threeElfGroups:
-        dict1 = dict.fromkeys(elfGroup[0])
-        dict2 = dict.fromkeys(elfGroup[1])
-        dict3 = dict.fromkeys(elfGroup[2])
+    three_elf_groups = list(grouped(rucksacks, 3))
+    for elf_group in three_elf_groups:
+        dict1 = dict.fromkeys(elf_group[0])
+        dict2 = dict.fromkeys(elf_group[1])
+        dict3 = dict.fromkeys(elf_group[2])
         res += compare_three_dicts(dict1, dict2, dict3)
     return res
 
 def main():
-    inputFile = "../inputs/3.txt"
-    print(part1(inputFile))
-    print(part2(inputFile))
+    input_file = "../inputs/3.txt"
+    print(part1(input_file))
+    print(part2(input_file))
 
 if __name__ == '__main__':
     main()

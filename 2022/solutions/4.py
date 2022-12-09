@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 """Advent of Code 2022 Day 4."""
 
 def read_file(filename):
@@ -7,7 +8,7 @@ def read_file(filename):
         lines = f.read().splitlines()
     return lines
 
-def getChunks(line):
+def get_chunks(line):
     first, second = line.split(',')
     x1, y1 = map(int, first.split('-'))
     x2, y2 = map(int, second.split('-'))
@@ -17,7 +18,7 @@ def part1(filename):
     lines = read_file(filename)
     res = 0
     for line in lines:
-        x1, y1, x2, y2 = getChunks(line)
+        x1, y1, x2, y2 = get_chunks(line)
         if x1 <= x2 <= y2 <= y1:
             res += 1
         elif x2 <= x1 <= y1 <= y2:
@@ -28,15 +29,15 @@ def part2(filename):
     lines = read_file(filename)
     res = len(lines)
     for line in lines:
-        x1, y1, x2, y2 = getChunks(line)
+        x1, y1, x2, y2 = get_chunks(line)
         if x1 > y2 or x2 > y1:
             res -= 1
     return res
 
 def main():
-    inputFile = "../inputs/4.txt"
-    print(part1(inputFile))
-    print(part2(inputFile))
+    input_file = "../inputs/4.txt"
+    print(part1(input_file))
+    print(part2(input_file))
 
 if __name__ == '__main__':
     main()

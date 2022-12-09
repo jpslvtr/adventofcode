@@ -25,12 +25,12 @@ def get_sizes(filename):
         else:
             # get sizes of dirs
             if cmd[0] != "dir":
-                currPath = ""
+                curr_path = ""
                 for folder in path:
-                    if currPath != "/" and folder != "/":
-                        currPath += "/"
-                    currPath += folder
-                    sizes[currPath] = sizes.get(currPath, 0) + int(cmd[0])
+                    if curr_path != "/" and folder != "/":
+                        curr_path += "/"
+                    curr_path += folder
+                    sizes[curr_path] = sizes.get(currPath, 0) + int(cmd[0])
     return sizes
 
 def part1(filename):
@@ -46,16 +46,16 @@ def part2(filename):
     res = []
     disk = 70000000
     unused = 30000000 
-    neededSpace = unused - (disk - sizes.get("/"))
+    needed_space = unused - (disk - sizes.get("/"))
     for value in sizes.values():
-        if value >= neededSpace:
+        if value >= needed_space:
             res.append(value)
     return min(res)
 
 def main():
-    inputFile = "../inputs/7.txt"
-    print(part1(inputFile))
-    print(part2(inputFile))
+    input_file = "../inputs/7.txt"
+    print(part1(input_file))
+    print(part2(input_file))
 
 if __name__ == '__main__':
     main()
