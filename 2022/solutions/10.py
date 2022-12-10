@@ -1,68 +1,65 @@
 #!/usr/bin/env python3
 
-"""Advent of Code 2022 Day 9."""
+"""Advent of Code 2022 Day 10."""
+
+signal1, signal2 = 1, 1
+cycle1, cycle2 = 0, 0
+crt = []
+res1, res2 = 0, ''
 
 def read_file(filename):
     with open(filename) as f:
         lines = f.read().splitlines()
     return lines
 
-class Knot:
-    def __init__(self):
-        self.x = 0
-        self.y = 0
+def next_inst():
+    global cycle1, res1
+    cycle1 += 1
+    if cycle1 in (20, 60, 100, 140, 180, 220):
+       res1 += (cycle1 * signal1)
 
-    def step(self, direction):
-        if direction == "R":
-            self.x += 1
-        elif direction == "L":
-            self.x -= 1
-        elif direction == "U":
-            self.y += 1
-        else:
-            self.y -= 1
-
-    def follow(self, head):
-        if abs(head.x - self.x) <= 1 and abs(head.y - self.y) <= 1:
-            return
-        if self.x < head.x:
-            self.x += 1
-        elif self.x > head.x:
-            self.x -= 1
-        if self.y < head.y:
-            self.y += 1
-        elif self.y > head.y:
-            self.y -= 1
+def next_draw():
+    global signal2, cycle2, res2
+    row = cycle2 // 40
+    col = cycle2 % 40
+    if abs(signal2 - col) <= 1:
+        crt[row][col] = '#'
+    cycle2 += 1
 
 def part1(filename):
+    global signal1, res1
     lines = read_file(filename)
-    head, tail = Knot(), Knot()
-    tail_visited = set()
     for line in lines:
-        direction, step = line.split()
-        for _ in range(int(step)):
-            head.step(direction)
-            tail.follow(head)
-            tail_visited.add((tail.x, tail.y))
-    return len(tail_visited)
+        line = line.split()
+        if line[0] == "noop":
+            next_inst()
+        else:
+            next_inst()
+            next_inst()
+            signal1 += int(line[1])
+    return res1
 
 def part2(filename):
+    global signal2, crt, res2
     lines = read_file(filename)
-    knots = []
-    for _ in range(10):
-        knots.append(Knot())
-    tail_visited = set()
+    for row in range(0, 6):
+        crt.append([])
+        for col in range(0, 40):
+            crt[row].append('.')
     for line in lines:
-        direction, step = line.split()
-        for _ in range(int(step)):
-            knots[-1].step(direction)
-            for i in range(9)[::-1]:
-                knots[i].follow(knots[i + 1])
-            tail_visited.add((knots[0].x, knots[0].y))
-    return len(tail_visited) 
+        line = line.split()
+        if line[0] == "noop":
+            next_draw()
+        else:
+            next_draw()
+            next_draw()
+            signal2 += int(line[1])
+    for row in range(0, 6):
+        res2 += (''.join(crt[row]) + '\n')
+    return res2
 
 def main():
-    input_file = "../inputs/09.txt"
+    input_file = "../inputs/10.txt"
     print(part1(input_file))
     print(part2(input_file))
 
