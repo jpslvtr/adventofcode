@@ -62,7 +62,7 @@ def part2(filename):
     return len(tail_visited) 
 
 def main():
-    input_file = "../inputs/9.txt"
+    input_file = "../inputs/09.txt"
     print(part1(input_file))
     print(part2(input_file))
 

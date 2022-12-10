@@ -22,7 +22,7 @@ def part2(filename):
             return i + 14
 
 def main():
-    input_file = "../inputs/6.txt"
+    input_file = "../inputs/06.txt"
     print(part1(input_file))
     print(part2(input_file))
 

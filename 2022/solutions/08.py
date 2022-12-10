@@ -61,7 +61,7 @@ def part2(filename):
     return highest_score
 
 def main():
-    input_file = "../inputs/8.txt"
+    input_file = "../inputs/08.txt"
     print(part1(input_file))
     print(part2(input_file))
 

@@ -35,7 +35,7 @@ def part2(filename):
     return res
 
 def main():
-    input_file = "../inputs/4.txt"
+    input_file = "../inputs/04.txt"
     print(part1(input_file))
     print(part2(input_file))
 

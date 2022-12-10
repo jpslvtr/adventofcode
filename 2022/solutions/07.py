@@ -53,7 +53,7 @@ def part2(filename):
     return min(res)
 
 def main():
-    input_file = "../inputs/7.txt"
+    input_file = "../inputs/07.txt"
     print(part1(input_file))
     print(part2(input_file))
 
