@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "challengebase",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kaitachi/ChallengeBase",
+      "state" : {
+        "revision" : "471a578c4d1f6f27e9d26fcdb9b479544f3b96d2",
+        "version" : "0.1.16"
+      }
+    }
+  ],
+  "version" : 2
+}
