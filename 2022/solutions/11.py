@@ -11,17 +11,21 @@ def read_file(filename):
 	return lines
 
 def worry_level(item, operation):
-	op, level = operation
-	if level == 'old':
-		level = item
-	else:
-		level = int(level)
-	match op:
-		case '+':   item += level
-		case '-':	item -= level
-		case '*':	item *= level
-		case '/':	item /= level
-	return int(item)
+    op, level = operation
+    if level == 'old':
+        level = item
+    else:
+        level = int(level)
+    match op:
+        case '+':
+            item += level
+        case '-':
+            item -= level
+        case '*':
+            item *= level
+        case '/':
+            item /= level
+    return int(item)
 
 def monkey_data(inputfile):
 	troop = [] # a group of monkeys = troop
