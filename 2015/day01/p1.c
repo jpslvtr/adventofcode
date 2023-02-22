@@ -20,6 +20,6 @@ int main(void) {
     FILE *fp = fopen("in.txt", "r");
     int res = santasFloor(fp);
     fclose(fp);
-    printf("floor: %d\n", res);
+    printf("res: %d\n", res);
     return 0;
 }

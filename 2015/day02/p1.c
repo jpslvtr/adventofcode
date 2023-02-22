@@ -32,6 +32,6 @@ int main(void) {
     FILE *fp = fopen("in.txt", "r");
     int res = wrappingPaper(fp);
     fclose(fp);
-    printf("total paper: %d\n", res);
+    printf("res: %d\n", res);
     return 0;
 }

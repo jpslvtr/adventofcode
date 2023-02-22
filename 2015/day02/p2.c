@@ -35,6 +35,6 @@ int main(void) {
     FILE *fp = fopen("in.txt", "r");
     int res = totalRibbon(fp);
     fclose(fp);
-    printf("total ribbon: %d\n", res);
+    printf("res: %d\n", res);
     return 0;
 }

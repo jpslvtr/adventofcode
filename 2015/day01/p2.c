@@ -25,6 +25,6 @@ int main(void) {
     FILE *fp = fopen("in.txt", "r");
     int res = firstEnterBasement(fp);
     fclose(fp);
-    printf("basement: %d\n", res);
+    printf("res: %d\n", res);
     return 0;
 }
