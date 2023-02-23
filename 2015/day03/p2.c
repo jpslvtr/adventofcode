@@ -8,25 +8,25 @@ struct house {
     struct house *next;
 };
 
-int addHouse(int x, int y, struct house *h) {
-	while (h->x != x || h->y != y) {
-		if(h->next != NULL) {
-			h = h->next;
+int addHouse(int x, int y, struct house *unit) {
+	while(unit->x != x || unit->y != y) {
+		if(unit->next != NULL) {
+			unit = unit->next;
 		} else {
-            h->next = (struct house *)malloc(sizeof(struct house));
-            h->next->x = x;
-            h->next->y = y;
-            h->next->next = NULL;
+            unit->next = (struct house *)malloc(sizeof(struct house));
+            unit->next->x = x;
+            unit->next->y = y;
+            unit->next->next = NULL;
 			return 1;
 		}
 	}
 	return 0;
 }
 
-void freeHouses(struct house *h) {
+void freeHouses(struct house *unit) {
     struct house *curr;
     struct house *prev;
-	curr = prev = h;
+    curr = prev = unit;
 	while(curr->next) {
 		prev = curr;
 		curr = curr->next;

@@ -12,19 +12,19 @@ int totalRibbon(FILE *fp) {
         int l = atoi(strtok(line, "x"));
         int w = atoi(strtok(NULL, "x"));
         int h = atoi(strtok(NULL, "x"));
-        int perimeter1 = (2*l + 2*w);
-        int perimeter2 = (2*w + 2*h);
-        int perimeter3 = (2*h + 2*l);
+        int perim1 = (2*l + 2*w);
+        int perim2 = (2*w + 2*h);
+        int perim3 = (2*h + 2*l);
         int volume = l*w*h;
         int smallest;
-        if(perimeter1 <= perimeter2 && perimeter1 <= perimeter3) {
-            smallest = perimeter1;
+        if(perim1 <= perim2 && perim1 <= perim3) {
+            smallest = perim1;
         }
-        else if(perimeter2 <= perimeter1 && perimeter2 <= perimeter3) {
-            smallest = perimeter2;
+        else if(perim2 <= perim1 && perim2 <= perim3) {
+            smallest = perim2;
         }
         else {
-            smallest = perimeter3;
+            smallest = perim3;
         }
         total += smallest + volume;
     }
