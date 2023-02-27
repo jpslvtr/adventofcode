@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 
 int santasFloor(FILE* fp) {
     int floor = 0;

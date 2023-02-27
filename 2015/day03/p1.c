@@ -1,48 +1,47 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 
-struct house {
+typedef struct House {
     int x;
     int y;
-    struct house *next;
-};
+    struct House *next;
+} House;
 
-int addHouse(int x, int y, struct house *unit) {
-	while(unit->x != x || unit->y != y) {
-		if(unit->next != NULL) {
-			unit = unit->next;
+int addHouse(int x, int y, House *unit) {
+	while((*unit).x != x || (*unit).y != y) {
+		if((*unit).next != NULL) {
+			unit = (*unit).next;
 		} else {
-            unit->next = (struct house *)malloc(sizeof(struct house));
-            unit->next->x = x;
-            unit->next->y = y;
-            unit->next->next = NULL;
+            (*unit).next = (House *)malloc(sizeof(House));
+            (*(*unit).next).x = x;
+            (*(*unit).next).y = y;
+            (*(*unit).next).next = NULL;
 			return 1;
 		}
 	}
 	return 0;
 }
 
-void freeHouses(struct house *unit) {
-    struct house *curr;
-    struct house *prev;
+void freeHouses(House *unit) {
+    House *curr;
+    House *prev;
     curr = prev = unit;
-	while(curr->next) {
+	while((*curr).next) {
 		prev = curr;
-		curr = curr->next;
+		curr = (*curr).next;
 		free(prev);
 	}
 }
 
 int countHouses(FILE* fp) {
     // ptr that stores the address of curr on the heap
-    struct house *curr;
+    House *curr;
     // dynamic allocation
-    curr = (struct house *)malloc(sizeof(struct house));
+    curr = (House *)malloc(sizeof(House));
     // derefernces ptr and gives us access to what curr is pointing to
-    curr->x = 0;
-    curr->y = 0;
-    curr->next = NULL;
+    (*curr).x = 0;
+    (*curr).y = 0;
+    (*curr).next = NULL;
     int x = 0;
     int y = 0;
     int houses = 1; // first house
