@@ -1,13 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include "../utils/utils.h"
 
-int firstEnterBasement(FILE* fp) {
+int p2(char *input) {
     int floor = 0;
     int position = 0;
-    char c;
-    while((c = fgetc(fp)) != EOF) {
+    // Return the first time Santa's position is in the
+    // basement, or -1.
+    for(int i = 0; i < strlen(input); i++) {
         position += 1;
-        if(c == '(') {
+        if(input[i] == '(') {
             floor += 1;
         } 
         else {
@@ -21,9 +24,8 @@ int firstEnterBasement(FILE* fp) {
 }
 
 int main(void) {
-    FILE *fp = fopen("in.txt", "r");
-    int res = firstEnterBasement(fp);
-    fclose(fp);
+    char *input = read_chars("in.txt");
+    int res = p2(input);
     printf("res: %d\n", res);
     return 0;
 }

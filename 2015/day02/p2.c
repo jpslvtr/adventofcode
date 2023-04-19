@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../utils/utils.h"
 
-int totalRibbon(FILE *fp) {
+int p2(FILE *fp) {
     int total = 0;
     char *line = NULL;
     size_t len = 0; // base unsigned int returned by sizeof()
@@ -33,7 +34,7 @@ int totalRibbon(FILE *fp) {
 
 int main(void) {
     FILE *fp = fopen("in.txt", "r");
-    int res = totalRibbon(fp);
+    int res = p2(fp);
     fclose(fp);
     printf("res: %d\n", res);
     return 0;

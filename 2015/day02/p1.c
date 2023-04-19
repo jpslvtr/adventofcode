@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../utils/utils.h"
 
-int wrappingPaper(FILE *fp) {
+int p1(FILE *fp) {
     int total = 0;
     char *line = NULL;
     size_t len = 0; // base unsigned int returned by sizeof()
@@ -30,7 +31,7 @@ int wrappingPaper(FILE *fp) {
 
 int main(void) {
     FILE *fp = fopen("in.txt", "r");
-    int res = wrappingPaper(fp);
+    int res = p1(fp);
     fclose(fp);
     printf("res: %d\n", res);
     return 0;
