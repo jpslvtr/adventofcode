@@ -18,7 +18,7 @@ def main():
     # Example usage of the utility functions
     numbers = [1, 2, 3, 4, 4, 5, 5]
     unique_numbers = remove_duplicates(numbers)
-    avg = calculate_average(numbers)
+    # avg = calculate_average(numbers)
 
     print(f"Original list: {numbers}")
     print(f"List with duplicates removed: {unique_numbers}")
