@@ -1,3 +1,3 @@
 # Advent Of Code
 
-Attempts at the annual [Advent Of Code](https://adventofcode.com/) challenge.
+Attempts at some [Advent Of Code](https://adventofcode.com/) challenges.
