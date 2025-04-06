@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-def read_data(filename):
-    with open(filename, "r", encoding="utf-8") as f:
-        return f.read().splitlines()
+import lib
 
 def part1(data):
     x, y = 0, 0
@@ -26,7 +24,7 @@ def part2(data):
     pass
 
 def main():
-    input = read_data("../inputs/03.txt")
+    input = lib.read_data("../inputs/03.txt")
     input = input[0]
 
     res1 = part1(input)
