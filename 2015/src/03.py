@@ -21,7 +21,38 @@ def part1(data):
     return len(visited)
 
 def part2(data):
-    pass
+    sx, sy = 0, 0
+    rx, ry = 0, 0
+    visited = set()
+    visited.add((sx,sy))
+
+    santa_turn = True
+
+    for c in data:
+        if santa_turn:
+            if c == "^":
+                sy += 1
+            elif c == "v":
+                sy -= 1
+            elif c == ">":
+                sx += 1
+            else:
+                sx -= 1
+            visited.add((sx,sy))
+        else:
+            if c == "^":
+                ry += 1
+            elif c == "v":
+                ry -= 1
+            elif c == ">":
+                rx += 1
+            else:
+                rx -= 1
+            visited.add((rx,ry))
+
+        santa_turn = not santa_turn
+    
+    return len(visited)
 
 def main():
     input = lib.read_data("../inputs/03.txt")
@@ -30,8 +61,8 @@ def main():
     res1 = part1(input)
     print("Part 1:", res1)
     
-    # res2 = part2(input)
-    # print("Part 2:", res2)
+    res2 = part2(input)
+    print("Part 2:", res2)
 
 if __name__ == "__main__":
     main()
