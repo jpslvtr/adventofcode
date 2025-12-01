@@ -3,13 +3,13 @@
 
 using namespace std;
 
-vector<string> read_lines(const string& filename) {
-    ifstream file(filename);
+vector<string> read_lines(string& filename) {
+    ifstream fs(filename);
     vector<string> lines;
     string line;
 
-    while (getline(file, line)) {
-        if (!line.empty() && line.back() == '\r') {
+    while (getline(fs, line)) {
+        if (!line.empty() && line.back() == '\n') {
             line.pop_back();
         }
         lines.push_back(line);

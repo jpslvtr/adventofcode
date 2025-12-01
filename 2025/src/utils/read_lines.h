@@ -4,6 +4,6 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> read_lines(const std::string& filename);
+std::vector<std::string> read_lines(std::string& filename);
 
 #endif
