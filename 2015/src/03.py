@@ -55,7 +55,7 @@ def part2(data):
     return len(visited)
 
 def main():
-    input = lib.read_data("../inputs/03.txt")
+    input = lib.read_data("../input/03.txt")
     input = input[0]
 
     res1 = part1(input)

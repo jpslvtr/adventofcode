@@ -50,7 +50,7 @@ def overlap_diagonal(input, grid):
 
 def main():
     """Main."""
-    input = read_file('../inputs/5.txt')
+    input = read_file('../input/5.txt')
     part1, grid = overlap(input)
     print(part1)
     part2 = overlap_diagonal(input, grid)

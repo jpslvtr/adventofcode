@@ -84,7 +84,7 @@ def part2(filename):
 	return (monkey_business[0] * monkey_business[1])
 
 def main():
-	input_file = "../inputs/11.txt"
+	input_file = "../input/11.txt"
 	print(part1(input_file))
 	print(part2(input_file))
 

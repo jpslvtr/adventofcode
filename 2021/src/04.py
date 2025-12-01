@@ -78,7 +78,7 @@ def read_file(filename):
 
 def main():
     """Main."""
-    numbers, boards = read_file('../inputs/4.txt')
+    numbers, boards = read_file('../input/4.txt')
     upper_bound = 100
     lower_bound = 0
     for board in boards:

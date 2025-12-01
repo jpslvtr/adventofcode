@@ -84,7 +84,7 @@ def life_support_rating(input):
 
 def main():
     """Main."""
-    input = read_file('../inputs/3.txt')
+    input = read_file('../input/3.txt')
     print(power_consumption(input))
     print(life_support_rating(input))
 

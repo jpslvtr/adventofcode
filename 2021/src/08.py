@@ -74,7 +74,7 @@ def part2(input):
 
 def main():
     """Main."""
-    input = read_file('../inputs/8.txt')
+    input = read_file('../input/8.txt')
     print(part1(input))
     print(part2(input))
 

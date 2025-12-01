@@ -25,7 +25,7 @@ def part2(data):
     return res
 
 def main():
-    input = lib.read_data("../inputs/02.txt")
+    input = lib.read_data("../input/02.txt")
 
     res1 = part1(input)
     print("Part 1:", res1)

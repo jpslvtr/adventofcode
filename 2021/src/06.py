@@ -32,7 +32,7 @@ def read_file(filename):
 
 def main():
     """Main."""
-    input = read_file('../inputs/6.txt')
+    input = read_file('../input/6.txt')
     print(lanternfish(input, days=80))
     print(lanternfish(input, days=256))
 

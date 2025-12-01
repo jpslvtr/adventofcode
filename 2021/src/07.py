@@ -44,7 +44,7 @@ def cost_calc(positions, meeting_point):
 
 def main():
     """Main."""
-    input = read_file('../inputs/7.txt')
+    input = read_file('../input/7.txt')
     part1 = fuel(input)
     print(part1)
     part2 = fuel2(input)

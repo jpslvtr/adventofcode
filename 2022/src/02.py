@@ -46,7 +46,7 @@ def part2(filename):
     return score
 
 def main():
-    input_file = "../inputs/02.txt"
+    input_file = "../input/02.txt"
     print(part1(input_file))
     print(part2(input_file))
 

@@ -65,7 +65,7 @@ def part2(filename):
     return simulate_sand(data, False) 
 
 def main():
-    input_file = "../inputs/14.txt"
+    input_file = "../input/14.txt"
     print(part1(input_file))
     print(part2(input_file))
 

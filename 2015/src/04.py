@@ -22,7 +22,7 @@ def part2(data):
         integer += 1
 
 def main():
-    input = lib.read_data("../inputs/04.txt")
+    input = lib.read_data("../input/04.txt")
     input = input[0]
 
     res1 = part1(input)

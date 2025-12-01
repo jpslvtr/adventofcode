@@ -53,7 +53,7 @@ def part2(filename):
     return min(paths)
 
 def main():
-    input_file = "../inputs/12.txt"
+    input_file = "../input/12.txt"
     print(part1(input_file))
     print(part2(input_file))
 

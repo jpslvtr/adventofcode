@@ -23,7 +23,7 @@ def part2(filename):
     return sum(sorted(total_calories, reverse=True)[0:3]) 
 
 def main():
-    input_file = "../inputs/01.txt"
+    input_file = "../input/01.txt"
     print(part1(input_file))
     print(part2(input_file))
 

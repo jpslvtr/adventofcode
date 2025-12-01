@@ -9,7 +9,7 @@ def part2(data):
     pass
 
 def main():
-    input = lib.read_data("../inputs/00.txt")
+    input = lib.read_data("../input/00.txt")
     # input = input[0]
     
     res1 = part1(input)

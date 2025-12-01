@@ -78,7 +78,7 @@ def part2(filename):
     return res
 
 def main():
-    input_file = "../inputs/15.txt"
+    input_file = "../input/15.txt"
     print(part1(input_file))
     print(part2(input_file))
     print("--- %.2f seconds ---" % (time.time() - start_time))
