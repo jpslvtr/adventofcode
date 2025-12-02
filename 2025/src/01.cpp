@@ -2,35 +2,35 @@
 #include <vector>
 #include <string>
 #include "utils/read_lines.h"
-
 using namespace std;
 
-int part1(string& filename) {
-    vector<string> lines = read_lines(filename);
+// CONSTANTS
+constexpr int START_POS = 50;
+constexpr int DIAL_SIZE = 100;
 
-    int position = 50; // starting dial position
-    int dial_size = 100; // 0-99 positions on dial
+// PART 1
+int part1(vector<string>& lines) {
+    int position = START_POS; // starting dial position
     int zero_count = 0; // how many times dial lands on zero
 
     for (size_t i = 0; i < lines.size(); i++) {
-        const string& line = lines[i];
+        string& line = lines[i];
 
         char dir = line[0]; // L or R
         int dist = stoi(line.substr(1)); // remaining chars = dist
 
         // convert distance to equivalent movement in the dial's range
-        int move = dist % dial_size;
+        int move = dist % DIAL_SIZE;
 
         if (dir == 'L') {
             position -= move;
             if (position < 0) {
-                position += dial_size; // wrap if position is negative
+                position += DIAL_SIZE; // wrap if position is negative
             }
-        }
-        else if (dir == 'R') {
+        } else if (dir == 'R') {
             position += move;
-            if (position >= dial_size) {
-                position -= dial_size; // wrap if position exceeds max
+            if (position >= DIAL_SIZE) {
+                position -= DIAL_SIZE; // wrap if position exceeds max
             }
         }
 
@@ -42,14 +42,45 @@ int part1(string& filename) {
     return zero_count;
 }
 
-int part2(string& filename) {
-    vector<string> lines = read_lines(filename);
-    return 0;
+// PART 2
+int part2(vector<string>& lines) {
+    int position = START_POS; // starting dial position
+    int zero_count = 0; // how many times dial lands on zero
+
+    for (size_t i = 0; i < lines.size(); i++) {
+        string& line = lines[i];
+
+        char dir = line[0]; // L or R
+        int dist = stoi(line.substr(1)); // remaining chars = dist
+
+        int zeros_this_move = 0;
+
+        if (dir == 'L') { // how many times do we pass 0 when moving left?
+            if (position == 0) {
+                zeros_this_move = dist / DIAL_SIZE;
+            } else if (dist < position) {
+                zeros_this_move = 0;
+            } else {
+                zeros_this_move = (dist - position) / DIAL_SIZE + 1;
+            }
+            int move = dist % DIAL_SIZE;
+            position = (position - move + DIAL_SIZE) % DIAL_SIZE;
+        }
+        else if (dir == 'R') { // how many times do we pass 0 when moving left?
+            zeros_this_move = (position + dist) / DIAL_SIZE;
+            int move = dist % DIAL_SIZE;
+            position = (position + move) % DIAL_SIZE;
+        }
+        zero_count += zeros_this_move;
+    }
+
+    return zero_count;
 }
 
 int main() {
     string input_file = "../input/01.txt";
-    cout << part1(input_file) << "\n";
-    cout << part2(input_file) << "\n";
+    vector<string> lines = read_lines(input_file);
+    cout << part1(lines) << "\n";
+    cout << part2(lines) << "\n";
     return 0;
 }

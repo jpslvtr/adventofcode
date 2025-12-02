@@ -9,9 +9,6 @@ vector<string> read_lines(string& filename) {
     string line;
 
     while (getline(fs, line)) {
-        if (!line.empty() && line.back() == '\n') {
-            line.pop_back();
-        }
         lines.push_back(line);
     }
 
